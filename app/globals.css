@@ -30,6 +30,24 @@ html {
   -webkit-line-clamp: 2;
 }
 
-button {
-  cursor: pointer;
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual card hover effects */
+.game-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.game-card:hover .card-overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.game-card:hover .card-expand-icon {
+  opacity: 1;
 }

@@ -23,14 +23,14 @@ export default function GameCard({ game }: GameCardProps) {
   };
 
   return (
-    <div className="relative rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group h-80">
+    <div className="relative rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 h-80 game-card">
       {/* Full card background image */}
       {game.background_image ? (
         <Image
           src={game.background_image}
           alt={game.name}
           fill
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
+          className="object-cover card-image transition-transform duration-300"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       ) : (
@@ -117,8 +117,8 @@ export default function GameCard({ game }: GameCardProps) {
       </div>
 
       {/* Hover overlay with view details */}
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center z-10 pointer-events-none">
-        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/20 backdrop-blur-sm p-3 rounded-full">
+      <div className="absolute inset-0 card-overlay transition-colors duration-300 flex items-center justify-center z-10 pointer-events-none">
+        <div className="card-expand-icon opacity-0 transition-opacity duration-300 bg-white/20 backdrop-blur-sm p-3 rounded-full">
           <ExternalLink className="w-6 h-6 text-white" />
         </div>
       </div>

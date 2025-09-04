@@ -99,6 +99,23 @@ export const gameApi = {
     return response.data;
   },
 
+  // Get genres list
+  getGenres: async (): Promise<{
+    results: Array<{
+      id: number;
+      name: string;
+      slug: string;
+      games_count: number;
+    }>;
+  }> => {
+    const response = await api.get("/genres", {
+      params: {
+        page_size: 20,
+      },
+    });
+    return response.data;
+  },
+
   // Get detailed game information
   getGameDetails: async (id: number): Promise<Game> => {
     const response = await api.get(`/games/${id}`);

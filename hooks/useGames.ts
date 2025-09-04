@@ -143,3 +143,12 @@ export const useGamesByPlatform = (platformId: number, page = 1) => {
     enabled: Boolean(platformId && isAPIKeyAvailable()),
   });
 };
+
+// Genres query
+export const useGenres = () => {
+  return useQuery({
+    queryKey: ["genres"],
+    queryFn: () => gameApi.getGenres(),
+    enabled: isAPIKeyAvailable(),
+  });
+};

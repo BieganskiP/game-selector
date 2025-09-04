@@ -1,5 +1,5 @@
-import GamesList from "@/components/GamesList";
+import NetflixStyleHome from "@/components/NetflixStyleHome";
 
 export default function Home() {
-  return <GamesList />;
+  return <NetflixStyleHome />;
 }

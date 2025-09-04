@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useGameStore } from "@/store/gameStore";
-import { Gamepad2, Shuffle, Heart } from "lucide-react";
+import { Gamepad2, Shuffle, Heart, List } from "lucide-react";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -12,9 +12,15 @@ export default function Navigation() {
   const navItems = [
     {
       href: "/",
-      label: "Browse Games",
+      label: "Discover",
       icon: Gamepad2,
       active: pathname === "/",
+    },
+    {
+      href: "/games",
+      label: "All Games",
+      icon: List,
+      active: pathname === "/games",
     },
     {
       href: "/picker",
