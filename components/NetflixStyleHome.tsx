@@ -118,7 +118,7 @@ export default function NetflixStyleHome() {
 
   return (
     <>
-      <Navigation onSearch={handleSearch} pageTitle="Discover Games" />
+      <Navigation onSearch={handleSearch} />
       <div className="min-h-screen bg-gray-900">
         {/* Game Sliders */}
         <div className="py-8">

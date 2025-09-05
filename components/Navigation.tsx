@@ -8,10 +8,9 @@ import { Gamepad2, Shuffle, Heart, List } from "lucide-react";
 
 interface NavigationProps {
   onSearch?: (query: string) => void;
-  pageTitle?: string;
 }
 
-export default function Navigation({ onSearch, pageTitle }: NavigationProps) {
+export default function Navigation({ onSearch }: NavigationProps) {
   const pathname = usePathname();
   const { savedGames } = useGameStore();
 
