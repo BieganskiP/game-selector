@@ -1,4 +1,5 @@
 import GameDetailsPage from "@/components/GameDetailsPage";
+import Navigation from "@/components/Navigation";
 
 interface GamePageProps {
   params: {
@@ -9,7 +10,12 @@ interface GamePageProps {
 export default function GamePage({ params }: GamePageProps) {
   const gameId = parseInt(params.id);
 
-  return <GameDetailsPage gameId={gameId} />;
+  return (
+    <>
+      <Navigation />
+      <GameDetailsPage gameId={gameId} />
+    </>
+  );
 }
 
 export async function generateMetadata({ params }: GamePageProps) {

@@ -1,7 +1,13 @@
 import GamesList from "@/components/GamesList";
+import Navigation from "@/components/Navigation";
 
 export default function GamesPage() {
-  return <GamesList />;
+  return (
+    <>
+      <Navigation pageTitle="All Games" />
+      <GamesList />
+    </>
+  );
 }
 
 export async function generateMetadata() {

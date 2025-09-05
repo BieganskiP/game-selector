@@ -3,9 +3,15 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useGameStore } from "@/store/gameStore";
+import SearchBar from "./SearchBar";
 import { Gamepad2, Shuffle, Heart, List } from "lucide-react";
 
-export default function Navigation() {
+interface NavigationProps {
+  onSearch?: (query: string) => void;
+  pageTitle?: string;
+}
+
+export default function Navigation({ onSearch, pageTitle }: NavigationProps) {
   const pathname = usePathname();
   const { savedGames } = useGameStore();
 
@@ -33,12 +39,20 @@ export default function Navigation() {
 
   return (
     <nav className="bg-gray-900 shadow-lg border-b border-gray-700 sticky top-0 z-40">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+      <div className="mx-auto px-4">
+        {/* Main navigation bar */}
+        <div className="flex items-center justify-between h-16 gap-6">
           <div className="flex items-center gap-3">
             <Gamepad2 className="w-8 h-8 text-blue-400" />
             <span className="font-bold text-xl text-white">Game Selector</span>
           </div>
+
+          {/* Search bar in header */}
+          {onSearch && (
+            <div className="flex-1 max-w-md">
+              <SearchBar onSearch={onSearch} className="w-full" />
+            </div>
+          )}
 
           <div className="flex items-center gap-1">
             {navItems.map((item) => {
